@@ -20,17 +20,17 @@ public class Audio {
     public void pause() {
         clip.stop();
     }
-    public void stop() {
+    public void reset() {
         clip.setMicrosecondPosition(0);
     }
     public void forward() {
-        if((clip.getMicrosecondLength() - clip.getMicrosecondPosition()) > 1000000) {
-            clip.setMicrosecondPosition(clip.getMicrosecondPosition() + 1000000);
+        if((clip.getMicrosecondLength() - clip.getMicrosecondPosition()) > 5000000) {
+            clip.setMicrosecondPosition(clip.getMicrosecondPosition() + 5000000);
         }
     }
     public void back() {
-        if (clip.getMicrosecondLength() > 1000000) {
-            clip.setMicrosecondPosition(clip.getMicrosecondPosition() - 1000000);
+        if (clip.getMicrosecondLength() > 5000000) {
+            clip.setMicrosecondPosition(clip.getMicrosecondPosition() - 5000000);
         }
     }
 }
