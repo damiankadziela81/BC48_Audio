@@ -10,7 +10,9 @@ import java.io.IOException;
 
 public class MyFrame extends JFrame implements ActionListener, MouseListener {
 
-    JTextField textField = new JTextField();
+    JTextField textFieldActualPosition = new JTextField();
+    JTextField textFieldClipLength = new JTextField();
+
     JButton playButton;
     JButton stopButton;
     JButton pauseButton;
@@ -20,16 +22,16 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
     Audio audio;
     JPanel sliderPanel;
     JSlider slider;
+    String actualPosition;
+    String clipLength;
+    boolean clipIsEmpty = true;
 
 
     Timer timer = new Timer(100, new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String actualPosition = String.valueOf(audio.clip.getMicrosecondPosition() / 10000);
-            String clipLength = String.valueOf(audio.clip.getMicrosecondLength() / 10000);
-            textField.setText(actualPosition + " / " + clipLength);
-            slider.setMaximum(Integer.parseInt(clipLength));
-            slider.setMinimum(0);
+            actualPosition = String.valueOf(audio.clip.getMicrosecondPosition() / 10000);
+            textFieldActualPosition.setText(actualPosition);
             slider.setValue(Integer.parseInt(actualPosition));
         }
     });
@@ -78,6 +80,7 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         slider.setMinorTickSpacing(1000);
         slider.setPaintLabels(true);
         slider.addMouseListener(this);
+        slider.setEnabled(false);
 
         sliderPanel = new JPanel();
         sliderPanel.setBounds(10,50,420,80);
@@ -85,15 +88,29 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         sliderPanel.add(slider);
 
         //  textField.setText();
-        textField.setBounds(20, 20, 160, 30);
-        textField.setOpaque(true);
+        textFieldActualPosition.setBounds(20,20,80,30);
+        textFieldActualPosition.setOpaque(true);
+        textFieldActualPosition.setEditable(false);
+        textFieldActualPosition.setBackground(Color.BLACK);
+        textFieldActualPosition.setForeground(Color.GREEN);
+        textFieldActualPosition.setFont(new Font("Consolas",Font.BOLD,25));
+        textFieldActualPosition.setText("0");
+
+        textFieldClipLength.setBounds(100,20,80,30);
+        textFieldClipLength.setOpaque(true);
+        textFieldClipLength.setEditable(false);
+        textFieldClipLength.setBackground(Color.BLACK);
+        textFieldClipLength.setForeground(Color.GREEN);
+        textFieldClipLength.setFont(new Font("Consolas",Font.BOLD,25));
+        textFieldClipLength.setText("0");
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Lame Wave Player");
+        this.setLocationRelativeTo(null);
         this.setLayout(null);
-        this.setResizable(true);
-
-        this.add(textField);
+        this.setResizable(false);
+        this.add(textFieldActualPosition);
+        this.add(textFieldClipLength);
         this.add(playButton);
         this.add(stopButton);
         this.add(pauseButton);
@@ -110,12 +127,20 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         if (e.getSource() == playButton) {
             audio.start();
             timer.start();
+            playButton.setBackground(Color.GREEN);
+            pauseButton.setBackground(null);
+           // loadFileButton.setEnabled(false);
         }
         if (e.getSource() == stopButton) {
+            audio.pause();
             audio.reset();
+            playButton.setBackground(null);
+            pauseButton.setBackground(null);
         }
         if (e.getSource() == pauseButton) {
             audio.pause();
+            pauseButton.setBackground(Color.GRAY);
+            playButton.setBackground(null);
         }
         if (e.getSource() == forwardButton) {
             audio.forward();
@@ -125,20 +150,29 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         }
         if (e.getSource() == loadFileButton) {
             JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setCurrentDirectory(new File(".")); //sets default path for project location
+            fileChooser.setCurrentDirectory(new File("C:\\Users\\Damian\\Downloads")); //sets default path for project location
             int response = fileChooser.showOpenDialog(null); //select file to open
             if (response == JFileChooser.APPROVE_OPTION) {
+                if (!clipIsEmpty) audio.clip.close();
                 File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
                 try {
                     audio = new Audio(file);
                 } catch (UnsupportedAudioFileException | IOException | LineUnavailableException ex) {
                     throw new RuntimeException(ex);
                 }
+                clipIsEmpty = false;
                 playButton.setEnabled(true);
+                playButton.setBackground(null);
                 stopButton.setEnabled(true);
                 pauseButton.setEnabled(true);
+                pauseButton.setBackground(null);
                 forwardButton.setEnabled(true);
                 backButton.setEnabled(true);
+                clipLength = String.valueOf(audio.clip.getMicrosecondLength() / 10000);
+                slider.setMaximum(Integer.parseInt(clipLength));
+                slider.setMinimum(0);
+                slider.setEnabled(true);
+                textFieldClipLength.setText(clipLength);
             }
         }
     }
@@ -156,7 +190,6 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
     @Override
     public void mouseReleased(MouseEvent e) {
         audio.set(slider.getValue());
-        System.out.println(slider.getValue());
         timer.start();
     }
 

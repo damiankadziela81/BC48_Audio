@@ -11,7 +11,7 @@ public class Audio {
         audioStream = AudioSystem.getAudioInputStream(file);
         clip = AudioSystem.getClip();
         clip.open(audioStream);
-        System.out.println("Clip lenght is " + clip.getMicrosecondLength() / 1000000 + " s");
+        System.out.println("Clip length is " + clip.getMicrosecondLength() / 1000000 + " s");
     }
     public void start() {
         clip.start();

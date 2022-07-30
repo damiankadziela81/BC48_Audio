@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edb56639-ef65-49d4-ae20-a56fd6cb7f8e" name="Changes" comment="Implemented progress slider" />
+    <list default="true" id="edb56639-ef65-49d4-ae20-a56fd6cb7f8e" name="Changes" comment="Minor changes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Audio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyFrame.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Damian/IdeaProjects/BC63_Slider"
+    "last_opened_file_path": "C:/Users/Damian/IdeaProjects/BC59_TextField"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -132,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659183747052</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Minor changes">
+      <created>1659184001851</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1659184001851</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,6 +175,7 @@
     <MESSAGE value="Added load file function" />
     <MESSAGE value="Removed included music.wav file, adjusted load button text and layout" />
     <MESSAGE value="Implemented progress slider" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented progress slider" />
+    <MESSAGE value="Minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes" />
   </component>
 </project>
