@@ -27,7 +27,7 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         public void actionPerformed(ActionEvent e) {
             String actualPosition = String.valueOf(audio.clip.getMicrosecondPosition() / 10000);
             String clipLength = String.valueOf(audio.clip.getMicrosecondLength() / 10000);
-            textField.setText(actualPosition + " / " + clipLength + " / " + slider.getValue());
+            textField.setText(actualPosition + " / " + clipLength);
             slider.setMaximum(Integer.parseInt(clipLength));
             slider.setMinimum(0);
             slider.setValue(Integer.parseInt(actualPosition));

@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edb56639-ef65-49d4-ae20-a56fd6cb7f8e" name="Changes" comment="Removed included music.wav file, adjusted load button text and layout">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Audio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyFrame.java" afterDir="false" />
-    </list>
+    <list default="true" id="edb56639-ef65-49d4-ae20-a56fd6cb7f8e" name="Changes" comment="Implemented progress slider" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +111,28 @@
       <option name="project" value="LOCAL" />
       <updated>1659177729300</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Implemented progress slider">
+      <created>1659183609666</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1659183609666</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Implemented progress slider">
+      <created>1659183673123</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1659183673123</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Implemented progress slider">
+      <created>1659183747052</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1659183747052</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,6 +163,7 @@
     <MESSAGE value="Added timer" />
     <MESSAGE value="Added load file function" />
     <MESSAGE value="Removed included music.wav file, adjusted load button text and layout" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed included music.wav file, adjusted load button text and layout" />
+    <MESSAGE value="Implemented progress slider" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented progress slider" />
   </component>
 </project>
