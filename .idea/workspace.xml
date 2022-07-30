@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edb56639-ef65-49d4-ae20-a56fd6cb7f8e" name="Changes" comment="Init commit">
+    <list default="true" id="edb56639-ef65-49d4-ae20-a56fd6cb7f8e" name="Changes" comment="Added load file function">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Audio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +44,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Damian/IdeaProjects/BC83_TimerTask"
+    "last_opened_file_path": "C:/Users/Damian/IdeaProjects/FileClass"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -94,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658338970559</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added timer">
+      <created>1658344093283</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1658344093283</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,6 +130,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
+    <MESSAGE value="Added timer" />
+    <MESSAGE value="Added load file function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added load file function" />
   </component>
 </project>

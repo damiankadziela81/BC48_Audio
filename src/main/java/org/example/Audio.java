@@ -5,12 +5,11 @@ import java.io.File;
 import java.io.IOException;
 
 public class Audio {
-
-    File file = new File("music.wav");
-    AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
-    Clip clip = AudioSystem.getClip();
-
-    public Audio() throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+    AudioInputStream audioStream;
+    Clip clip;
+    public Audio(File file) throws UnsupportedAudioFileException, IOException, LineUnavailableException {
+        audioStream = AudioSystem.getAudioInputStream(file);
+        clip = AudioSystem.getClip();
         clip.open(audioStream);
         System.out.println("Clip lenght is " + clip.getMicrosecondLength() / 1000000 + " s");
     }
