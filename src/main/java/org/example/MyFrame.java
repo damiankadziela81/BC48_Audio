@@ -84,10 +84,8 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
 
         sliderPanel = new JPanel();
         sliderPanel.setBounds(10,50,420,80);
-        //sliderPanel.setBackground(Color.red);
         sliderPanel.add(slider);
 
-        //  textField.setText();
         textFieldActualPosition.setBounds(20,20,80,30);
         textFieldActualPosition.setOpaque(true);
         textFieldActualPosition.setEditable(false);
@@ -129,7 +127,6 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
             timer.start();
             playButton.setBackground(Color.GREEN);
             pauseButton.setBackground(null);
-           // loadFileButton.setEnabled(false);
         }
         if (e.getSource() == stopButton) {
             audio.pause();
