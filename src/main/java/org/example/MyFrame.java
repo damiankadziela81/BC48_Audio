@@ -60,8 +60,8 @@ public class MyFrame extends JFrame implements ActionListener {
         backButton.setFocusable(false);
         backButton.setEnabled(false);
 
-        loadFileButton = new JButton("Load");
-        loadFileButton.setBounds(180, 20, 80, 30);
+        loadFileButton = new JButton("LOAD WAVE FILE");
+        loadFileButton.setBounds(260, 20, 160, 30);
         loadFileButton.addActionListener(this);
         loadFileButton.setFocusable(false);
 
@@ -70,7 +70,7 @@ public class MyFrame extends JFrame implements ActionListener {
         textField.setOpaque(true);
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setTitle("Lame Player");
+        this.setTitle("Lame Wave Player");
         this.setLayout(null);
         this.setResizable(false);
         this.setSize(450, 200);
