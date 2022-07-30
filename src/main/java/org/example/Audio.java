@@ -32,4 +32,7 @@ public class Audio {
             clip.setMicrosecondPosition(clip.getMicrosecondPosition() - 5000000);
         }
     }
+    public void set(long position) {
+        clip.setMicrosecondPosition(position*10000);
+    }
 }

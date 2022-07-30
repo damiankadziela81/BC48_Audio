@@ -9,4 +9,4 @@ public class Main {
     }
 }
 
-//TODO progress bar, format time display, add button icons
+//TODO format time display, add button icons
