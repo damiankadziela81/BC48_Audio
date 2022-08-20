@@ -12,7 +12,6 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
 
     JTextField textFieldActualPosition = new JTextField();
     JTextField textFieldClipLength = new JTextField();
-
     JButton playButton;
     JButton stopButton;
     JButton pauseButton;
@@ -25,7 +24,6 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
     String actualPosition;
     String clipLength;
     boolean clipIsEmpty = true;
-
 
     Timer timer = new Timer(100, new ActionListener() {
         @Override
@@ -41,31 +39,26 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         playButton.setBounds(20, 120, 80, 30);
         playButton.addActionListener(this);
         playButton.setFocusable(false);
-        playButton.setEnabled(false);
 
         stopButton = new JButton("STOP");
         stopButton.setBounds(100, 120, 80, 30);
         stopButton.addActionListener(this);
         stopButton.setFocusable(false);
-        stopButton.setEnabled(false);
 
         pauseButton = new JButton("PAUSE");
         pauseButton.setBounds(180, 120, 80, 30);
         pauseButton.addActionListener(this);
         pauseButton.setFocusable(false);
-        pauseButton.setEnabled(false);
 
         forwardButton = new JButton(">>");
         forwardButton.setBounds(260, 120, 80, 30);
         forwardButton.addActionListener(this);
         forwardButton.setFocusable(false);
-        forwardButton.setEnabled(false);
 
         backButton = new JButton("<<");
         backButton.setBounds(340, 120, 80, 30);
         backButton.addActionListener(this);
         backButton.setFocusable(false);
-        backButton.setEnabled(false);
 
         loadFileButton = new JButton("LOAD WAVE FILE");
         loadFileButton.setBounds(260, 20, 160, 30);
@@ -80,21 +73,17 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         slider.setMinorTickSpacing(1000);
         slider.setPaintLabels(true);
         slider.addMouseListener(this);
-        slider.setEnabled(false);
 
         sliderPanel = new JPanel();
         sliderPanel.setBounds(10,50,420,80);
-        //sliderPanel.setBackground(Color.red);
         sliderPanel.add(slider);
 
-        //  textField.setText();
         textFieldActualPosition.setBounds(20,20,80,30);
         textFieldActualPosition.setOpaque(true);
         textFieldActualPosition.setEditable(false);
         textFieldActualPosition.setBackground(Color.BLACK);
         textFieldActualPosition.setForeground(Color.GREEN);
         textFieldActualPosition.setFont(new Font("Consolas",Font.BOLD,25));
-        textFieldActualPosition.setText("0");
 
         textFieldClipLength.setBounds(100,20,80,30);
         textFieldClipLength.setOpaque(true);
@@ -102,7 +91,8 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         textFieldClipLength.setBackground(Color.BLACK);
         textFieldClipLength.setForeground(Color.GREEN);
         textFieldClipLength.setFont(new Font("Consolas",Font.BOLD,25));
-        textFieldClipLength.setText("0");
+
+        disableControls();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setTitle("Lame Wave Player");
@@ -129,7 +119,6 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
             timer.start();
             playButton.setBackground(Color.GREEN);
             pauseButton.setBackground(null);
-           // loadFileButton.setEnabled(false);
         }
         if (e.getSource() == stopButton) {
             audio.pause();
@@ -149,6 +138,7 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
             audio.back();
         }
         if (e.getSource() == loadFileButton) {
+            disableControls();
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setCurrentDirectory(new File("C:\\Users\\Damian\\Downloads")); //sets default path for project location
             int response = fileChooser.showOpenDialog(null); //select file to open
@@ -177,6 +167,16 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         }
     }
 
+    public void disableControls(){
+        playButton.setEnabled(false);
+        stopButton.setEnabled(false);
+        pauseButton.setEnabled(false);
+        forwardButton.setEnabled(false);
+        backButton.setEnabled(false);
+        slider.setEnabled(false);
+        textFieldActualPosition.setText("0");
+        textFieldClipLength.setText("0");
+    }
     @Override
     public void mouseClicked(MouseEvent e) {
 
