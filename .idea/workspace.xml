@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edb56639-ef65-49d4-ae20-a56fd6cb7f8e" name="Changes" comment="Fixed a bug when loading next wave while the current played would leave the first one playing in the background. Tweaked the control buttons.">
+    <list default="true" id="edb56639-ef65-49d4-ae20-a56fd6cb7f8e" name="Changes" comment="Cleanup - removed commented lines">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659200346147</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Cleanup - removed commented lines">
+      <created>1659201100893</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1659201100893</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,6 +190,7 @@
     <MESSAGE value="Implemented progress slider" />
     <MESSAGE value="Minor changes" />
     <MESSAGE value="Fixed a bug when loading next wave while the current played would leave the first one playing in the background. Tweaked the control buttons." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug when loading next wave while the current played would leave the first one playing in the background. Tweaked the control buttons." />
+    <MESSAGE value="Cleanup - removed commented lines" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup - removed commented lines" />
   </component>
 </project>
