@@ -29,7 +29,7 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         @Override
         public void actionPerformed(ActionEvent e) {
             actualPosition = String.valueOf(audio.clip.getMicrosecondPosition() / 10000);
-            textFieldActualPosition.setText(actualPosition);
+            textFieldActualPosition.setText(convertLengthToTime(actualPosition));
             slider.setValue(Integer.parseInt(actualPosition));
         }
     });
@@ -78,14 +78,14 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         sliderPanel.setBounds(10,50,420,80);
         sliderPanel.add(slider);
 
-        textFieldActualPosition.setBounds(20,20,80,30);
+        textFieldActualPosition.setBounds(20,20,120,30);
         textFieldActualPosition.setOpaque(true);
         textFieldActualPosition.setEditable(false);
         textFieldActualPosition.setBackground(Color.BLACK);
         textFieldActualPosition.setForeground(Color.GREEN);
         textFieldActualPosition.setFont(new Font("Consolas",Font.BOLD,25));
 
-        textFieldClipLength.setBounds(100,20,80,30);
+        textFieldClipLength.setBounds(140,20,120,30);
         textFieldClipLength.setOpaque(true);
         textFieldClipLength.setEditable(false);
         textFieldClipLength.setBackground(Color.BLACK);
@@ -162,7 +162,7 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
                 slider.setMaximum(Integer.parseInt(clipLength));
                 slider.setMinimum(0);
                 slider.setEnabled(true);
-                textFieldClipLength.setText(clipLength);
+                textFieldClipLength.setText(convertLengthToTime(clipLength));
             }
         }
     }
@@ -176,6 +176,16 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         slider.setEnabled(false);
         textFieldActualPosition.setText("0");
         textFieldClipLength.setText("0");
+    }
+
+    public String convertLengthToTime(String lenght) {
+        int miliseconds = Integer.parseInt(lenght) % 100;
+        int seconds = (Integer.parseInt(lenght) / 60) % 60;
+        int minutes = (Integer.parseInt(lenght) / 3600) % 60;
+        String milisecondsString = String.format("%02d",miliseconds);
+        String secondsString = String.format("%02d",seconds);
+        String minutesString = String.format("%02d",minutes);
+        return minutesString + ":" + secondsString + ":" + milisecondsString;
     }
     @Override
     public void mouseClicked(MouseEvent e) {
