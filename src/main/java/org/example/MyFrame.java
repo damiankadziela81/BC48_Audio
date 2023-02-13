@@ -174,14 +174,14 @@ public class MyFrame extends JFrame implements ActionListener, MouseListener {
         forwardButton.setEnabled(false);
         backButton.setEnabled(false);
         slider.setEnabled(false);
-        textFieldActualPosition.setText("0");
-        textFieldClipLength.setText("0");
+        textFieldActualPosition.setText("00:00:00");
+        textFieldClipLength.setText("00:00:00");
     }
 
-    public String convertLengthToTime(String lenght) {
-        int miliseconds = Integer.parseInt(lenght) % 100;
-        int seconds = (Integer.parseInt(lenght) / 60) % 60;
-        int minutes = (Integer.parseInt(lenght) / 3600) % 60;
+    public String convertLengthToTime(String length) {
+        int miliseconds = Integer.parseInt(length) % 100;
+        int seconds = (Integer.parseInt(length) / 60) % 60;
+        int minutes = (Integer.parseInt(length) / 3600) % 60;
         String milisecondsString = String.format("%02d",miliseconds);
         String secondsString = String.format("%02d",seconds);
         String minutesString = String.format("%02d",minutes);
